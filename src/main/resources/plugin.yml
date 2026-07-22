@@ -21,6 +21,11 @@ commands:
     usage: /<command> <group>
     permission: servertool.joingroup
     permission-message: 您没有权限使用此命令
+  feedback:
+    description: 发送反馈
+    usage: /<command> <type> <message>
+    permission: servertool.feedback
+    permission-message: 您没有权限使用此命令
 permissions:
   servertool.help:
     description: 使用ServerTool帮助命令
@@ -31,3 +36,7 @@ permissions:
   servertool.joingroup:
     description: 使用发送加入群组提示命令
     default: op
+  servertool.feedback:
+    description: 使用反馈命令
+#     所有人都可以使用反馈命令
+    default: true

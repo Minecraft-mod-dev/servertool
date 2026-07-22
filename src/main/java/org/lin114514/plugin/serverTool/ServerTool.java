@@ -9,8 +9,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ServerTool extends JavaPlugin {
 
+    private static ServerTool instance;
+
     @Override
     public void onEnable() {
+        instance=this;
         String[] lines = {
                 "                                          _____              _ ",
                 "        ___   ___  _ __ __   __ ___  _ __|_   _|___    ___  | |",
@@ -54,6 +57,14 @@ public final class ServerTool extends JavaPlugin {
             String groupUrl = args[0];
             message m = new message();
             m.joinGroup(groupUrl);
+        }else if(cmdNm.equalsIgnoreCase("feedback")){
+            if(args.length!=2){
+                sender.sendMessage("§c参数太多/太少!");
+                return false;
+            }
+            String type = args[0];
+            String msg = args[1];
+            feedback.submit(type, msg);
         }
         return false;
     }
@@ -71,5 +82,8 @@ public final class ServerTool extends JavaPlugin {
             getLogger().info("I |" + s);
         }
         getLogger().info("ServerTool插件已禁用！");
+    }
+    public static ServerTool getInstance() {
+        return instance;
     }
 }
