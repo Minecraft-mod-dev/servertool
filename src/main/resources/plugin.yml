@@ -1,0 +1,33 @@
+name: serverTool
+version: '1.0.2-Release'
+main: org.lin114514.plugin.serverTool.ServerTool
+api-version: '1.21'
+website: 'https://servertool.lin114514.top'
+authors: [Lin114514]
+
+commands:
+  servertool:
+    description: ServerTool帮助命令
+    usage: /<command>
+    permission: servertool.help
+    permission-message: 您没有权限使用此命令
+  offlinehint:
+    description: 发送服务器即将下线提示
+    usage: /<command> <minutes> <why>
+    permission: servertool.offlinehint
+    permission-message: 您没有权限使用此命令
+  joingrouphint:
+    description: 发送加入群组提示
+    usage: /<command> <group>
+    permission: servertool.joingroup
+    permission-message: 您没有权限使用此命令
+permissions:
+  servertool.help:
+    description: 使用ServerTool帮助命令
+    default: op
+  servertool.offlinehint:
+    description: 使用发送服务器即将下线提示命令
+    default: op
+  servertool.joingroup:
+    description: 使用发送加入群组提示命令
+    default: op
