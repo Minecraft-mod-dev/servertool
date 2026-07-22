@@ -7,8 +7,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class gift implements Listener{
-    public gift(ServerTool plugin) {
+public class Gift implements Listener{
+    public Gift(ServerTool plugin) {
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
     @EventHandler

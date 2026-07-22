@@ -2,8 +2,6 @@ package org.lin114514.plugin.serverTool;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -26,7 +24,7 @@ public final class ServerTool extends JavaPlugin {
             getLogger().info("I |" + s);
         }
         getLogger().info("ServerTool插件已启用！");
-        gift g = new gift(this);
+        Gift g = new Gift(this);
     }
     @Override
     public boolean onCommand(CommandSender sender, Command cmd,String label, String[] args) {
@@ -47,7 +45,7 @@ public final class ServerTool extends JavaPlugin {
             }
             int mins = Integer.parseInt(args[0]);
             String msg = args[1];
-            message m = new message();
+            Message m = new Message();
             m.serverOffline(mins, msg);
         }else if(cmdNm.equalsIgnoreCase("joingroup")){
             if(args.length!=1){
@@ -55,7 +53,7 @@ public final class ServerTool extends JavaPlugin {
                 return false;
             }
             String groupUrl = args[0];
-            message m = new message();
+            Message m = new Message();
             m.joinGroup(groupUrl);
         }else if(cmdNm.equalsIgnoreCase("feedback")){
             if(args.length!=2){
@@ -64,7 +62,7 @@ public final class ServerTool extends JavaPlugin {
             }
             String type = args[0];
             String msg = args[1];
-            feedback.submit(type, msg);
+            Feedback.submit(type, msg);
         }
         return false;
     }

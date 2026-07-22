@@ -8,7 +8,7 @@ import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class message {
+public class Message {
     // 服务器即将关闭提示
     public void serverOffline(int minutes, String why) {
         Component msg = Component.text()

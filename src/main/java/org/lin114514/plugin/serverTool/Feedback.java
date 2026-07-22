@@ -1,6 +1,5 @@
 package org.lin114514.plugin.serverTool;
 
-import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -11,9 +10,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeUnit;
 
 import static org.bukkit.Bukkit.getLogger;
-import static org.bukkit.Bukkit.getServer;
 
-public class feedback {
+public class Feedback {
     private static final String baseUrl = "https://api.feedback.lin114514.top";
     private static final String source = "paperMinecraftServer";
 
