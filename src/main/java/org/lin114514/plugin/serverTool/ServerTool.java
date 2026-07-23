@@ -49,7 +49,7 @@ public final class ServerTool extends JavaPlugin {
             Message m = new Message();
             m.serverOffline(mins, msg);
             return true;
-        }else if(cmdNm.equalsIgnoreCase("joingroup")){
+        }else if(cmdNm.equalsIgnoreCase("joingrouphint")){
             if(args.length!=1){
                 sender.sendMessage("§c参数太多/太少!");
                 return false;
