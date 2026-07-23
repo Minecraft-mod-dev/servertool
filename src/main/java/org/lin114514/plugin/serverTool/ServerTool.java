@@ -38,6 +38,7 @@ public final class ServerTool extends JavaPlugin {
             desc.getCommands().forEach((comd, info) -> {
                 sender.sendMessage("§6命令: /" + comd + "§r - §b" + info.get("description"));
             });
+            return true;
         }else if(cmdNm.equalsIgnoreCase("offlinehint")){
             if(args.length!=2){
                 sender.sendMessage("§c参数太多/太少!");
@@ -47,6 +48,7 @@ public final class ServerTool extends JavaPlugin {
             String msg = args[1];
             Message m = new Message();
             m.serverOffline(mins, msg);
+            return true;
         }else if(cmdNm.equalsIgnoreCase("joingroup")){
             if(args.length!=1){
                 sender.sendMessage("§c参数太多/太少!");
@@ -55,6 +57,7 @@ public final class ServerTool extends JavaPlugin {
             String groupUrl = args[0];
             Message m = new Message();
             m.joinGroup(groupUrl);
+            return true;
         }else if(cmdNm.equalsIgnoreCase("feedback")){
             if(args.length!=2){
                 sender.sendMessage("§c参数太多/太少!");
@@ -63,6 +66,7 @@ public final class ServerTool extends JavaPlugin {
             String type = args[0];
             String msg = args[1];
             Feedback.submit(type, msg);
+            return true;
         }
         return false;
     }
