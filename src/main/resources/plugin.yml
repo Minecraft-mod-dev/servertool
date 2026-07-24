@@ -1,5 +1,5 @@
 name: serverTool
-version: '1.1.6-Release'
+version: '1.1.7-Release'
 main: org.lin114514.plugin.serverTool.ServerTool
 api-version: '1.21'
 website: 'https://servertool.lin114514.top'
@@ -8,22 +8,22 @@ authors: [Lin114514]
 commands:
   servertool:
     description: ServerTool帮助命令 / 重载配置
-    usage: /<command> [reload]
+    usage: /servertool [reload]
     permission: servertool.help
     permission-message: 您没有权限使用此命令
   offlinehint:
     description: 发送服务器即将下线提示
-    usage: /<command> <minutes> <why>
+    usage: /offlinehint <minutes> <why>
     permission: servertool.offlinehint
     permission-message: 您没有权限使用此命令
   joingrouphint:
     description: 发送加入群组提示
-    usage: /<command> <group>
+    usage: /joingrouphint <group>
     permission: servertool.joingroup
     permission-message: 您没有权限使用此命令
   feedback:
     description: 发送反馈
-    usage: /<command> <type> <message>
+    usage: /feedback <type> <message>
     permission: servertool.feedback
     permission-message: 您没有权限使用此命令
 permissions:
