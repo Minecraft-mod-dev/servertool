@@ -12,6 +12,7 @@ public final class ServerTool extends JavaPlugin {
     @Override
     public void onEnable() {
         instance=this;
+        saveDefaultConfig();
         String[] lines = {
                 "                                          _____              _ ",
                 "        ___   ___  _ __ __   __ ___  _ __|_   _|___    ___  | |",

@@ -13,7 +13,9 @@ import static org.bukkit.Bukkit.getLogger;
 
 public class Feedback {
     private static final String baseUrl = "https://api.feedback.lin114514.top";
-    private static final String source = "paperMinecraftServer";
+    private static String getSource() {
+        return ServerTool.getInstance().getConfig().getString("source", "paperMinecraftServer");
+    }
 
     private static final OkHttpClient HTTP_CLIENT;
 
@@ -35,7 +37,7 @@ public class Feedback {
             @Override
             public void run(){
                 try {
-                    String eSource = URLEncoder.encode(source, StandardCharsets.UTF_8);
+                    String eSource = URLEncoder.encode(getSource(), StandardCharsets.UTF_8);
                     String eType = URLEncoder.encode(type, StandardCharsets.UTF_8);
                     String eMessage = URLEncoder.encode(message, StandardCharsets.UTF_8);
 
