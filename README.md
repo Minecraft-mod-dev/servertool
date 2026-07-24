@@ -1,4 +1,4 @@
-# ServerTool v1.1.4
+# ServerTool v1.1.6-Release
 ## 简介
 ServerTool 是一个**Paper端**的**Minecraft插件**，提供了**3个**主要内容
 ### 反馈系统

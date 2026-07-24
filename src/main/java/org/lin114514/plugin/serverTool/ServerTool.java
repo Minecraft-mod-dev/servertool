@@ -31,13 +31,18 @@ public final class ServerTool extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command cmd,String label, String[] args) {
         String cmdNm = cmd.getName();
         if(cmdNm.equalsIgnoreCase("servertool")){
+            if(args.length > 0 && args[0].equalsIgnoreCase("reload")){
+                reloadConfig();
+                sender.sendMessage("§a配置已重载!");
+                getLogger().info("配置已通过 /servertool reload 重载");
+                return true;
+            }
             PluginDescriptionFile desc = getDescription();
             sender.sendMessage("§a"+"=".repeat(30));
             sender.sendMessage("§9ServerTool插件帮助");
             sender.sendMessage("§a"+"=".repeat(30));
-            // 命令信息
             desc.getCommands().forEach((comd, info) -> {
-                sender.sendMessage("§6命令: /" + comd + "§r - §b" + info.get("description"));
+                sender.sendMessage("§6" + info.get("usage") + "§r - §b" + info.get("description"));
             });
             return true;
         }else if(cmdNm.equalsIgnoreCase("offlinehint")){

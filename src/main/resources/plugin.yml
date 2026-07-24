@@ -1,5 +1,5 @@
 name: serverTool
-version: '1.1.5-Release'
+version: '1.1.6-Release'
 main: org.lin114514.plugin.serverTool.ServerTool
 api-version: '1.21'
 website: 'https://servertool.lin114514.top'
@@ -7,8 +7,8 @@ authors: [Lin114514]
 
 commands:
   servertool:
-    description: ServerTool帮助命令
-    usage: /<command>
+    description: ServerTool帮助命令 / 重载配置
+    usage: /<command> [reload]
     permission: servertool.help
     permission-message: 您没有权限使用此命令
   offlinehint:
