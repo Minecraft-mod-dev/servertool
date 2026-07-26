@@ -12,15 +12,10 @@ public class Message {
     // 服务器即将关闭提示
     public void serverOffline(int minutes, String why) {
         Component msg = Component.text()
-                .append(Component.text("[公告] ")
-                        .color(NamedTextColor.RED)
-                        .decorate(TextDecoration.BOLD))
-                .append(Component.text("服务器即将在 " + minutes + " 分钟后关闭/重启，")
-                        .color(NamedTextColor.GREEN))
-                .append(Component.text("原因: " + why + " ")
-                        .color(NamedTextColor.YELLOW))
-                .append(Component.text("造成不便请谅解!")
-                        .color(NamedTextColor.GREEN))
+                .append(MessageLib.addText("[公告]", NamedTextColor.RED, TextDecoration.BOLD))
+                .append(MessageLib.addText("服务器即将在 " + minutes + " 分钟后关闭/重启，", NamedTextColor.GREEN, TextDecoration.BOLD))
+                .append(MessageLib.addText("原因: " + why + " ", NamedTextColor.YELLOW, TextDecoration.BOLD))
+                .append(MessageLib.addText("造成不便请谅解!", NamedTextColor.GREEN, TextDecoration.BOLD))
                 .build();
 
         for (Player p : Bukkit.getOnlinePlayers()) {
@@ -31,20 +26,11 @@ public class Message {
     // 加入服务器群组公告
     public void joinGroup(String groupUrl) {
         Component msg = Component.text()
-                .append(Component.text("[群组] ")
-                        .color(NamedTextColor.BLUE)
-                        .decorate(TextDecoration.BOLD))
-                .append(Component.text("加入我们的")
-                        .color(NamedTextColor.GREEN))
-                .append(Component.text("群组")
-                        .color(NamedTextColor.GREEN)
-                        .decorate(TextDecoration.UNDERLINED)
-                        .clickEvent(ClickEvent.openUrl(groupUrl))
-                        .hoverEvent(HoverEvent.showText(
-                                Component.text("点击访问 " + groupUrl)
-                                        .color(NamedTextColor.GRAY))))
-                .append(Component.text("，与管理员共议建设服务器，与其他玩家交流!")
-                        .color(NamedTextColor.GREEN))
+                .append(MessageLib.addText("[群组]", NamedTextColor.BLUE, TextDecoration.BOLD))
+                .append(MessageLib.addText("加入我们的", NamedTextColor.GREEN, TextDecoration.BOLD))
+                .append(MessageLib.addText("群组", NamedTextColor.GREEN, TextDecoration.UNDERLINED).clickEvent(MessageLib.openUrl(groupUrl))
+                        .hoverEvent(MessageLib.showText(MessageLib.addText("点击访问 " + groupUrl, NamedTextColor.GRAY, TextDecoration.UNDERLINED))))
+                .append(MessageLib.addText("，与管理员共议建设服务器，与其他玩家交流!", NamedTextColor.GREEN, TextDecoration.BOLD))
                 .build();
 
         for (Player p : Bukkit.getOnlinePlayers()) {
