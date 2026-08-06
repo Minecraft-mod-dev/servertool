@@ -12,9 +12,11 @@ import java.util.concurrent.TimeUnit;
 import static org.bukkit.Bukkit.getLogger;
 
 public class Feedback {
-    private static final String baseUrl = "https://api.feedback.lin114514.top";
+    private static String getBaseUrl(){
+        return ServerTool.getInstance().getConfig().getString("apiLink","https://example.com");
+    }
     private static String getSource() {
-        return ServerTool.getInstance().getConfig().getString("source", "paperMinecraftServer");
+        return "paperMinecraftServer";
     }
 
     private static final OkHttpClient HTTP_CLIENT;
@@ -43,7 +45,7 @@ public class Feedback {
 
                     String URL = String.format(
                             "%s/send?source=%s&type=%s&msg=%s",
-                            baseUrl,eSource,eType,eMessage
+                            getBaseUrl(),eSource,eType,eMessage
                     );
 
                     Request request = new Request.Builder()
