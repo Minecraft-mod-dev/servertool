@@ -9,7 +9,11 @@ ServerTool 是一个**Paper端**的**Minecraft插件**，提供了**3个**主要
 ##### 重要的事情说三遍
 ##### 需要自己搭建服务，否则无法使用！
 ##### 需要自己搭建服务，否则无法使用！
-##### 需要自己搭建服务，否则无法使用
+##### 需要自己搭建服务，否则无法使用！  
+可以参考:  
+[创建域名及绑定Cloudflare](https://blog.lin114514.top/cloudflare/cf-bp-1)  
+[如何创建DNS记录<可参考>](https://tenfy.cn/posts/cloudflare-dns-tutorial/)  
+[Workers实现反馈系统核心](https://blog.lin114514.top/cloudflare/cf-workers-feedback)  
 注：该指令**所有玩家**均可使用
 ```
 /feedback <type> <message>
